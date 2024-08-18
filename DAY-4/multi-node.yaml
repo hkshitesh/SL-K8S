@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: node1
+spec:
+  taints:
+    - key: example.com/special-taint
+      value: special-value
+      effect: NoSchedule
+status:
+  capacity:
+    cpu: "4"
+    memory: "8Gi"
+  allocatable:
+    cpu: "4"
+    memory: "8Gi"
+  conditions:
+    - type: Ready
+      status: "True"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node2
+spec:
+  taints:
+    - key: example.com/another-taint
+      value: another-value
+      effect: NoSchedule
+status:
+  capacity:
+    cpu: "6"
+    memory: "16Gi"
+  allocatable:
+    cpu: "6"
+    memory: "16Gi"
+  conditions:
+    - type: Ready
+      status: "True"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node3
+spec:
+  taints:
+    - key: example.com/yet-another-taint
+      value: yet-another-value
+      effect: NoSchedule
+status:
+  capacity:
+    cpu: "8"
+    memory: "32Gi"
+  allocatable:
+    cpu: "8"
+    memory: "32Gi"
+  conditions:
+    - type: Ready
+      status: "True"
