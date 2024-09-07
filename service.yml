@@ -4,7 +4,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: lbnginx
+    app: myapp
   ports:
   - protocol: TCP
     port: 80
